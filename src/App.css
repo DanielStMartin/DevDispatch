@@ -21,11 +21,29 @@ input {
   top: 0;
   bottom: 0;
   background: rgba(0, 0, 0, 0.9);
-  width: 60%;
+  width: 65%;
   margin: 134px auto;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
+}
+
+.school {
+  display: flex;
+  justify-content: space-between;
+  /* width: 100%; */
+  /* border: 1px solid red; */
+  color: white;
+  font-family: monospace;
+  padding: 5px;
+  border: 1px solid black;
 
 }
+
+.school:hover {
+  background-color: rgba(0,0,0,.5);
+  cursor: pointer;
+}
+
+
 
 .close {
   display: none;

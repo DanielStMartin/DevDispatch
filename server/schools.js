@@ -1,4 +1,4 @@
-exports.data =  [
+exports.data = [
   {
     id: 1,
     name: "App Acedemy",
@@ -37,8 +37,8 @@ exports.data =  [
   },
   {
     id: 2,
-    name: "",
-    description: "Austin Coding Academy",
+    name: "Austin Coding Academy",
+    description: "",
     rating: "",
     genPerks: {
       "Guarantees Job": false,

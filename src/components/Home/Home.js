@@ -17,23 +17,13 @@ class Home extends Component {
       input: val
     });
     axios.get(`/schools?query=${this.state.input}`).then(response => {
+      console.log(response.data)
       this.setState({
         schools: response.data
       });
     });
   };
-  //   Search Model Show
-  showSearch = () => {
-    this.setState({
-      toggle: true
-    });
-  };
-  //   Search Model close
-  closeSearch = () => {
-    this.setState({
-      toggle: false
-    });
-  };
+  
   render() {
     return (
       <div>
@@ -43,9 +33,21 @@ class Home extends Component {
             <img src={search} alt = 'icon' />
           </button>
         </div>
-        <button onClick={this.showSearch}>Open</button>
-        <div className={` ${this.state.toggle ? "show" : "close"}`}>
-          <button onClick={this.closeSearch}>Close</button>
+        <div className={` ${this.state.input.length ? "show" : "close"}`}>
+          {this.state.schools.length ? (
+            this.state.schools.map(school => { 
+              return(
+              <div className = 'school'>
+                <h1>{school.name}</h1>
+                <h2>{school.rating || 'No rating'}</h2>
+               </div>
+              )
+            })
+          ) : (
+              <div>
+                <h2>No results :(</h2>
+              </div>
+          )}
         </div>
       </div>
     );
